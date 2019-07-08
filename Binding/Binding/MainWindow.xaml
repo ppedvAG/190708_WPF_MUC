@@ -5,8 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Binding"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="BindingDemo" Height="450" Width="800">
+    <Window.Resources>
+        <local:FaktorKonverter x:Key="Faktorkonverter"/>
+    </Window.Resources>
     <Grid>
+        <Grid.Resources>
+            <BooleanToVisibilityConverter x:Key="Bool2Vis"/>
+            <local:FarbKonverter x:Key="Farbkonverter"/>
+            <local:FaktorKonverter x:Key="Faktorkonverter"/>
+        </Grid.Resources>
+
+
+        <TextBox x:Name="textBoxWert" HorizontalAlignment="Left" Height="23" Margin="10,16,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="labelWert" Content="{Binding ElementName=textBoxWert,Path=Text,Mode=TwoWay}" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top" Width="120"/>
+        <Slider x:Name="sliderWert"
+                Value="{Binding ElementName=labelWert,Path=Content}"
+                Minimum="0" Maximum="100" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBoxFarbe" HorizontalAlignment="Left" Height="23" Margin="197,16,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Rectangle x:Name="rechtangleFarbe"
+                   Fill="{Binding ElementName=textBoxFarbe,Path=Text}"
+                   Visibility="{Binding ElementName=checkBoxFarbe,Path=IsChecked,Converter={StaticResource Bool2Vis}}"
+                   HorizontalAlignment="Left" Height="100" Margin="197,44,0,0" Stroke="Black" VerticalAlignment="Top" Width="120"/>
+        <CheckBox x:Name="checkBoxFarbe" Content="Sichtbar ?" HorizontalAlignment="Left" Margin="322,129,0,0" VerticalAlignment="Top"/>
+
+        <TextBox x:Name="textBoxFarbeDeutsch" HorizontalAlignment="Left" Height="23" Margin="429,16,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Ellipse x:Name="ellipseFarbeDeutsch"
+                 Fill="{Binding ElementName=textBoxFarbeDeutsch,Path=Text,Converter={StaticResource Farbkonverter}}"
+                 
+                 HorizontalAlignment="Left" Height="100" Margin="429,44,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="textBoxFaktor" HorizontalAlignment="Left" Height="23" Margin="576,16,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"
+                 Text="{Binding ElementName=labelUpdateSourceTrigger,Path=Content,UpdateSourceTrigger=LostFocus,Mode=TwoWay}"/>
         
+        <Label Content="{Binding ElementName=textBoxFaktor,Path=Text, Converter={StaticResource Faktorkonverter},ConverterParameter=2}"
+               HorizontalAlignment="Left" Margin="576,44,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="12" x:Name="labelUpdateSourceTrigger"
+            HorizontalAlignment="Left" Margin="576,83,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="{Binding Text, ConverterParameter=10, Converter={StaticResource Faktorkonverter}, ElementName=textBoxFaktor}"
+            HorizontalAlignment="Left" Margin="576,119,0,0" VerticalAlignment="Top" Width="120"/>
+
+
     </Grid>
 </Window>
