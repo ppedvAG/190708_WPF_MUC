@@ -24,5 +24,22 @@ namespace Ressourcen
         {
             InitializeComponent();
         }
+
+        private void ButtonLogin_Click(object sender, RoutedEventArgs e)
+        {
+            //// Style zur Laufzeit zuweisen
+            //// buttonLogin.Style = (Style)this.Resources["redButtonStyle"];
+            //SolidColorBrush brush = new SolidColorBrush();//  (SolidColorBrush)this.Resources["cooleFarbe"];
+            //brush.Color = Colors.Tomato;
+
+            //this.Resources["cooleFarbe"] = brush;
+
+            this.Resources["DefaultButtonStyle"] = this.Resources["redButtonStyle"];
+        }
+
+        private void ButtonRegister_Click(object sender, RoutedEventArgs e)
+        {
+            this.Resources["DefaultButtonStyle"] = this.Resources["greenButtonStyle"];
+        }
     }
 }
