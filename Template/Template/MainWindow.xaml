@@ -5,8 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Template"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="266" Width="371.2" Style="{DynamicResource WindowDefaultStyle}">
     <Grid>
+        <Grid.Resources>
+            <Style TargetType="Button">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <!-- Button mit eingebautem Icon -->
+                            <Border Background="Peru" BorderBrush="Plum" BorderThickness="3" CornerRadius="20">
+                                <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                                    <Image Height="25" Width="25" Source="https://i.pinimg.com/originals/d4/88/0d/d4880df1f53eea927e706d8d88dc5d72.jpg"/>
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Grid.Resources>
         
+        <Button Content="Klick mich !" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="179" Height="43"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" Width="143" Height="39"/>
+        <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="17,117,0,0" VerticalAlignment="Top" Width="136" Style="{DynamicResource CheckBoxSmileyStyle}" Height="23"/>
+
+
+
     </Grid>
 </Window>
