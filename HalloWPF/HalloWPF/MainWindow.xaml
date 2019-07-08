@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HalloWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="320.4" Width="330.8">
+        Title="MainWindow" Height="320.4" Width="632.8">
     <Grid>
-        <Button Content="Klick mich !"
+        <Button Content="_Klick mich !"
                 HorizontalAlignment="Left"
-                Margin="66,43,0,0"
+                Margin="15,9,0,0"
                 VerticalAlignment="Top"
                 Width="200" Height="70" Cursor="Cross" Foreground="#FFFFDCEF" FontFamily="Elephant" FontSize="24"
                 Click="buttonKlickMich_Click">
@@ -24,16 +24,44 @@
         <TextBox x:Name="textBoxWert"
                  Background="Olive"
                  Foreground="MediumTurquoise"
-                 HorizontalAlignment="Left" Height="23" Margin="66,128,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="200"/>
-        <Grid x:Name="gridEbene1" MouseDown="GridEbene_MouseDown" Background="PaleGoldenrod" HorizontalAlignment="Left" Height="107" Margin="66,165,0,0" VerticalAlignment="Top" Width="200">
+                 HorizontalAlignment="Left" Height="23" Margin="14,94,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="200"/>
+        <Grid x:Name="gridEbene1" MouseDown="GridEbene_MouseDown" Background="PaleGoldenrod" HorizontalAlignment="Left" Height="107" Margin="15,131,0,0" VerticalAlignment="Top" Width="200">
             <Grid x:Name="gridEbene2" MouseDown="GridEbene_MouseDown"  Background="DarkSalmon" HorizontalAlignment="Left" Height="70" Margin="19,18,0,0" VerticalAlignment="Top" Width="159">
                 <Grid x:Name="gridEbene3" MouseDown="GridEbene_MouseDown" Background="Gray" HorizontalAlignment="Left" Height="45" Margin="29,15,0,0" VerticalAlignment="Top" Width="105">
-                    
+
                 </Grid>
 
             </Grid>
 
         </Grid>
+        <Button HorizontalAlignment="Left" Margin="248,17,0,0" VerticalAlignment="Top" Width="188" Height="46">
+            <Button.Content>
+                <TextBox Width="200"/>
+            </Button.Content>
+        </Button>
+        <Label Content="Das ist ein _Text in einem Label" HorizontalAlignment="Left" Margin="248,68,0,0" VerticalAlignment="Top" Height="27" Width="188"/>
+        <TextBlock HorizontalAlignment="Left" Margin="253,100,0,0" TextWrapping="Wrap" Text="Das ist ein _Text in einem Textblock" VerticalAlignment="Top" Width="188"/>
+        <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="253,121,0,0" VerticalAlignment="Top" Width="118"/>
+        <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="253,141,0,0" VerticalAlignment="Top" Width="118"/>
+        <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="253,161,0,0" VerticalAlignment="Top" Width="118"/>
+        <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="253,181,0,0" VerticalAlignment="Top"/>
+        <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="253,201,0,0" VerticalAlignment="Top"/>
+        <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="253,221,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="451,17,0,0" VerticalAlignment="Top" Width="126">
+            <ComboBoxItem Content="Hallo Welt"/>
+            <Button Content="Klick mich 2" Click="buttonKlickMich_Click"/>
+            <Separator/>
+            <Label Content="Apfel"/>
+            <Label Content="Birne"/>
+            <Label Content="Banane"/>
+        </ComboBox>
+        <ListBox HorizontalAlignment="Left" Height="192" Margin="477,44,0,0" VerticalAlignment="Top" Width="100">
+            <ListBoxItem Content="Text1"/>
+            <ListBoxItem Content="Text2"/>
+            <Button Content="Text 3" Click="buttonKlickMich_Click"/>
+            <Separator/>
+            <Label Content="Text 4"/>
+        </ListBox>
 
 
     </Grid>
