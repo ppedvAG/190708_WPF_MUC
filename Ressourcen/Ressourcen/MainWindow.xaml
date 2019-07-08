@@ -6,6 +6,16 @@
         xmlns:local="clr-namespace:Ressourcen"
         mc:Ignorable="d"
         Title="Ressourcen in WPF" Height="300" Width="400">
+    <Window.Resources>
+        <!-- ResourceDictionary einbetten -->
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="BasicStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+        
+        
+    </Window.Resources>
     <DockPanel>
         <!--<DockPanel.Resources>
             <SolidColorBrush x:Key="cooleFarbe" Color="YellowGreen"/>
@@ -24,6 +34,8 @@
                 <SolidColorBrush x:Key="cooleFarbe" Color="PaleTurquoise"/>
             </Grid.Resources>-->
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -48,6 +60,8 @@
 
             <Button x:Name="buttonLogin" Style="{DynamicResource DefaultButtonStyle}" Content="Login" Grid.Row="2" Grid.ColumnSpan="2" Click="ButtonLogin_Click"/>
             <Button x:Name="buttonRegister" Style="{DynamicResource DefaultButtonStyle}" Content="Register" Grid.Row="3" Grid.ColumnSpan="2" Margin="0,5,0,0" Click="ButtonRegister_Click"/>
+            <Button Content="Button Nr 3" Grid.Row="4"/>
+            <Button Content="Button Nr 4" Grid.Row="5" Style="{StaticResource specialBlueButtonStyle}"/>
         </Grid>
     </DockPanel>
 </Window>
