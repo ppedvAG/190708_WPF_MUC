@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HalloWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="320.4" Width="330.8">
     <Grid>
-        
+        <Button Content="Klick mich !"
+                HorizontalAlignment="Left"
+                Margin="66,43,0,0"
+                VerticalAlignment="Top"
+                Width="200" Height="70" Cursor="Cross" Foreground="#FFFFDCEF" FontFamily="Elephant" FontSize="24"
+                Click="buttonKlickMich_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFDFFA0D" Offset="1"/>
+                    <GradientStop Color="#FFFF0C0C"/>
+                    <GradientStop Color="#FF085BB5" Offset="0.012"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+
     </Grid>
 </Window>

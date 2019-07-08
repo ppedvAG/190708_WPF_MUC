@@ -24,5 +24,10 @@ namespace HalloWPF
         {
             InitializeComponent();
         }
+
+        private void buttonKlickMich_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Hallo Welt");
+        }
     }
 }
