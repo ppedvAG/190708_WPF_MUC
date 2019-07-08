@@ -34,12 +34,12 @@ namespace Ressourcen
 
             //this.Resources["cooleFarbe"] = brush;
 
-            this.Resources["DefaultButtonStyle"] = this.Resources["redButtonStyle"];
+            this.Resources["DefaultButtonStyle"] =  Application.Current.Resources["redButtonStyle"];
         }
 
         private void ButtonRegister_Click(object sender, RoutedEventArgs e)
         {
-            this.Resources["DefaultButtonStyle"] = this.Resources["greenButtonStyle"];
+            this.Resources["DefaultButtonStyle"] = Application.Current.Resources["greenButtonStyle"];
         }
     }
 }

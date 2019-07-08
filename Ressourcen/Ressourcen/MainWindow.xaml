@@ -6,24 +6,6 @@
         xmlns:local="clr-namespace:Ressourcen"
         mc:Ignorable="d"
         Title="Ressourcen in WPF" Height="300" Width="400">
-    <Window.Resources>
-        <SolidColorBrush x:Key="cooleFarbe" Color="MediumVioletRed"/>
-        <Style TargetType="Button" x:Key="greenButtonStyle">
-            <Setter Property="Background" Value="SeaGreen"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontFamily" Value="Comic Sans MS"/>
-        </Style>
-        <Style TargetType="Button" x:Key="redButtonStyle">
-            <Setter Property="Background" Value="{StaticResource cooleFarbe}"/>
-            <Setter Property="Foreground" Value="PaleVioletRed"/>
-            <Setter Property="FontFamily" Value="Impact"/>
-        </Style>
-
-        <Style TargetType="Button" x:Key="DefaultButtonStyle">
-            
-        </Style>
-
-    </Window.Resources>
     <DockPanel>
         <!--<DockPanel.Resources>
             <SolidColorBrush x:Key="cooleFarbe" Color="YellowGreen"/>
@@ -37,7 +19,6 @@
                 <MenuItem Header="Beenden"/>
             </MenuItem>
         </Menu>
-        
         <Grid Margin="50">
             <!--<Grid.Resources>
                 <SolidColorBrush x:Key="cooleFarbe" Color="PaleTurquoise"/>
@@ -66,8 +47,7 @@
             <PasswordBox x:Name="passwortBoxPasswort" Grid.Row="1" Grid.Column="1" Margin="10"/>
 
             <Button x:Name="buttonLogin" Style="{DynamicResource DefaultButtonStyle}" Content="Login" Grid.Row="2" Grid.ColumnSpan="2" Click="ButtonLogin_Click"/>
-            <Button x:Name="buttonRegister" Style="{DynamicResource DefaultButtonStyle}" Content="Register" Grid.Row="3" Grid.ColumnSpan="2" Margin="0,5,0,0" Click="ButtonRegister_Click">
-            </Button>
+            <Button x:Name="buttonRegister" Style="{DynamicResource DefaultButtonStyle}" Content="Register" Grid.Row="3" Grid.ColumnSpan="2" Margin="0,5,0,0" Click="ButtonRegister_Click"/>
         </Grid>
     </DockPanel>
 </Window>
