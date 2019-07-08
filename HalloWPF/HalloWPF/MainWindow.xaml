@@ -21,6 +21,19 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
+        <TextBox x:Name="textBoxWert"
+                 Background="Olive"
+                 Foreground="MediumTurquoise"
+                 HorizontalAlignment="Left" Height="23" Margin="66,128,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="200"/>
+        <Grid x:Name="gridEbene1" MouseDown="GridEbene_MouseDown" Background="PaleGoldenrod" HorizontalAlignment="Left" Height="107" Margin="66,165,0,0" VerticalAlignment="Top" Width="200">
+            <Grid x:Name="gridEbene2" MouseDown="GridEbene_MouseDown"  Background="DarkSalmon" HorizontalAlignment="Left" Height="70" Margin="19,18,0,0" VerticalAlignment="Top" Width="159">
+                <Grid x:Name="gridEbene3" MouseDown="GridEbene_MouseDown" Background="Gray" HorizontalAlignment="Left" Height="45" Margin="29,15,0,0" VerticalAlignment="Top" Width="105">
+                    
+                </Grid>
+
+            </Grid>
+
+        </Grid>
 
 
     </Grid>

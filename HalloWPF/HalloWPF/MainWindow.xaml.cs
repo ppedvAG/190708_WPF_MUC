@@ -27,7 +27,14 @@ namespace HalloWPF
 
         private void buttonKlickMich_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Hallo Welt");
+            MessageBox.Show("Hallo Welt von " + textBoxWert.Text );
+        }
+
+        private void GridEbene_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Grid auslöser = (Grid)sender;
+            MessageBox.Show("Ebene: " + auslöser.Name);
+            e.Handled = true; // Kein weiterwerfen
         }
     }
 }
