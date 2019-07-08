@@ -5,15 +5,56 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Binding"
         mc:Ignorable="d"
-        Title="BindingDemo" Height="450" Width="800">
+        Title="BindingDemo" Height="450" Width="920.8">
     <Window.Resources>
         <local:FaktorKonverter x:Key="Faktorkonverter"/>
+        <Style TargetType="{x:Type Button}" x:Key="TemplateButton">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+
+                        <Grid>
+                            <Ellipse Fill="{Binding Background, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                Height="{TemplateBinding Height}"
+                                Width="{TemplateBinding Width}"/>
+                            <TextBlock Text="{TemplateBinding Content}"
+                                Foreground="{TemplateBinding Foreground}"
+                                FontSize="{TemplateBinding FontSize}"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"/>
+                        </Grid>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
-    <Grid>
+    <Grid Background="White">
         <Grid.Resources>
             <BooleanToVisibilityConverter x:Key="Bool2Vis"/>
             <local:FarbKonverter x:Key="Farbkonverter"/>
             <local:FaktorKonverter x:Key="Faktorkonverter"/>
+            <local:RGBKonverter x:Key="RGBKonverter"/>
+            <Style TargetType="Button" x:Key="TemplateButton">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+
+                            <Grid>
+                                <Ellipse Fill="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=Background}"
+                                         Height="{TemplateBinding Height}"
+                                         Width="{TemplateBinding Width}"/>
+                                <TextBlock Text="{TemplateBinding Content}"
+                                           Foreground="{TemplateBinding Foreground}"
+                                           FontSize="{TemplateBinding FontSize}"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+                            </Grid>
+
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
         </Grid.Resources>
 
 
@@ -36,13 +77,67 @@
                  HorizontalAlignment="Left" Height="100" Margin="429,44,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
         <TextBox x:Name="textBoxFaktor" HorizontalAlignment="Left" Height="23" Margin="576,16,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"
                  Text="{Binding ElementName=labelUpdateSourceTrigger,Path=Content,UpdateSourceTrigger=LostFocus,Mode=TwoWay}"/>
-        
+
         <Label Content="{Binding ElementName=textBoxFaktor,Path=Text, Converter={StaticResource Faktorkonverter},ConverterParameter=2}"
                HorizontalAlignment="Left" Margin="576,44,0,0" VerticalAlignment="Top" Width="120"/>
         <Label Content="12" x:Name="labelUpdateSourceTrigger"
             HorizontalAlignment="Left" Margin="576,83,0,0" VerticalAlignment="Top" Width="120"/>
         <Label Content="{Binding Text, ConverterParameter=10, Converter={StaticResource Faktorkonverter}, ElementName=textBoxFaktor}"
             HorizontalAlignment="Left" Margin="576,119,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBoxVorname" HorizontalAlignment="Left" Height="23" Margin="23,155,0,0" TextWrapping="Wrap" Text="Max" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBoxNachname" HorizontalAlignment="Left" Height="23" Margin="23,183,0,0" TextWrapping="Wrap" Text="Mustermann" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="23,221,0,0" VerticalAlignment="Top" Width="120" Height="18">
+            <TextBlock.Text>
+                <MultiBinding StringFormat="{}{0} {1}">
+                    <Binding ElementName="textBoxVorname" Path="Text"/>
+                    <Binding ElementName="textBoxNachname" Path="Text"/>
+                </MultiBinding>
+            </TextBlock.Text>
+        </TextBlock>
+        <Slider x:Name="sliderMesswert"
+                TickPlacement="BottomRight"
+                TickFrequency="5"
+                IsSnapToTickEnabled="True"
+                Minimum="0" Maximum="100" HorizontalAlignment="Left" Margin="207,183,0,0" VerticalAlignment="Top" Width="284"/>
+        <TextBlock HorizontalAlignment="Left" Margin="207,205,0,0" TextWrapping="Wrap"
+                   Text="{Binding ElementName=sliderMesswert,Path=Value,StringFormat='{} Der aktuelle Wert ist: {0}'}"
+                   VerticalAlignment="Top" Width="284"/>
+        <Slider x:Name="sliderR" Minimum="0" Maximum="255" HorizontalAlignment="Left" Margin="23,273,0,0" VerticalAlignment="Top" Width="168"/>
+        <Slider x:Name="sliderG" Minimum="0" Maximum="255" HorizontalAlignment="Left" Margin="23,296,0,0" VerticalAlignment="Top" Width="168"/>
+        <Slider x:Name="sliderB" Minimum="0" Maximum="255" HorizontalAlignment="Left" Margin="23,319,0,0" VerticalAlignment="Top" Width="168"/>
+        <Rectangle HorizontalAlignment="Left" Height="100" Margin="207,258,0,0" Stroke="Black" VerticalAlignment="Top" Width="100">
+            <Rectangle.Fill>
+                <MultiBinding Converter="{StaticResource RGBKonverter}">
+                    <Binding ElementName="sliderR" Path="Value"/>
+                    <Binding ElementName="sliderG" Path="Value"/>
+                    <Binding ElementName="sliderB" Path="Value"/>
+                </MultiBinding>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle x:Name="rectangleSelf"
+                   HorizontalAlignment="Left"
+                   Height="100"
+                   Width="{Binding RelativeSource={RelativeSource Mode=Self},Path=Height}"
+                   Margin="379,258,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Grid Background="LemonChiffon" HorizontalAlignment="Left" Height="139" Margin="509,232,0,0" VerticalAlignment="Top" Width="212">
+            <Grid Background="PaleVioletRed" HorizontalAlignment="Left" Height="81" Margin="41,24,0,0" VerticalAlignment="Top" Width="136">
+                <TextBlock 
+                    Foreground="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Grid,AncestorLevel=2},Path=Background}"
+                    HorizontalAlignment="Left" Margin="23,33,0,0" TextWrapping="Wrap" Text="MeinText" VerticalAlignment="Top"/>
+            </Grid>
+        </Grid>
+
+        <Button Content="ButtonMitTemplate"
+                Background="Red"
+                Foreground="Aqua"
+                Style="{StaticResource TemplateButton}" HorizontalAlignment="Left" Margin="757,183,0,0" VerticalAlignment="Top" Width="125" Height="70"/>
+        <Button Content="ButtonMitTemplate"
+            Background="Green"
+            Foreground="Yellow"
+            Style="{StaticResource TemplateButton}" HorizontalAlignment="Left" Margin="757,262,0,0" VerticalAlignment="Top" Width="125" Height="70"/>
+
+
 
 
     </Grid>
