@@ -35,5 +35,10 @@ namespace Trigger
         {
             MessageBox.Show("ICH BIN KEIN BUTTON !!!!");
         }
+
+        private void LabelExit_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
