@@ -5,29 +5,110 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Trigger"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  HorizontalAlignment="Left" Margin="45,22,0,0" VerticalAlignment="Top" Width="170" Height="44">
-            <Label.Style>
-                <Style TargetType="Label">
-                    <Setter Property="Background" Value="OldLace"/>
-                    <Setter Property="Content" Value="Klick mich !"/>
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="Salmon"/>
-                            <Setter Property="Content" Value="TU ES !!!"/>
-                        </Trigger>
-                        <DataTrigger Binding="{Binding ElementName=checkBoxRahmen,Path=IsChecked}"
+        Title="MainWindow" Height="450" Width="800" WindowStyle="None" AllowsTransparency="True"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown" Background="{x:Null}">
+    <Border  CornerRadius="20" BorderBrush="Black" BorderThickness="3">
+        <Border.Background>
+            <LinearGradientBrush EndPoint="0.569,1.183" StartPoint="0.567,-0.445">
+                <GradientStop Color="#E5002EFF"/>
+                <GradientStop Color="#9900F3FF" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid>
+            <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  HorizontalAlignment="Left" Margin="45,22,0,0" VerticalAlignment="Top" Width="170" Height="44">
+                <Label.Style>
+                    <Style TargetType="Label">
+                        <Setter Property="Background" Value="OldLace"/>
+                        <Setter Property="Content" Value="Klick mich !"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Salmon"/>
+                                <Setter Property="Content" Value="TU ES !!!"/>
+                            </Trigger>
+                            <DataTrigger Binding="{Binding ElementName=checkBoxRahmen,Path=IsChecked}"
                                      Value="True">
-                            <Setter Property="BorderBrush" Value="Orchid"/>
-                            <Setter Property="BorderThickness" Value="5"/>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </Label.Style>
-        </Label>
-        
-        <CheckBox x:Name="checkBoxRahmen" Content="Zeige den Rahmen an" HorizontalAlignment="Left" Margin="45,86,0,0" VerticalAlignment="Top" Width="170"/>
+                                <Setter Property="BorderBrush" Value="Orchid"/>
+                                <Setter Property="BorderThickness" Value="5"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Label.Style>
+            </Label>
 
-    </Grid>
+            <CheckBox x:Name="checkBoxRahmen" Content="Zeige den Rahmen an" HorizontalAlignment="Left" Margin="45,86,0,0" VerticalAlignment="Top" Width="170"/>
+            <Path Data="M355.81591,94.965268 L377.5,111.5 388.5,172.5 452.5,163.5 452.5,109.5 437.31591,80.465268 z" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="93.035" Margin="282.816,70.465,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="97.684"/>
+            <Path MouseDown="Path_MouseDown" Data="M515,82 C530.88632,73.394909 545.99669,58.003312 560,44 570.32718,33.672817 556.78102,28.671533 573,53 577.71704,60.075553 596.47425,82.525747 587,92 613.59097,88.20129 644.85393,81.715356 671,73 664.05837,73 634.67685,93.5627 626,101 617.77776,108.04763 604.79973,110.84005 594,113 596.3196,118.79899 600.09449,127.18898 603,133 604.48705,135.9741 616.33507,161.80816&#xD;&#xA;611,166 600.88661,173.94624 563.59152,118.38728 552,101 552,114.75892 514.27738,134 492,134 492,134.66667 492,135.33333 492,136 487.49439,126.98878 487.75709,104.62146 503,97 504.85204,96.073978 510,95.501809 510,92 510,87.844767 509.41351,83.413509 506,80 498.87748,72.877477 498.5796,67.545611 495,58 491.21631,47.910154&#xD;&#xA;475.05652,32.028261 509,49 519.91238,54.456188 528.30107,67.357785 536,74" HorizontalAlignment="Left" Height="132.313" Margin="452.841,55.46,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="184.159">
+                <Path.Style>
+                    <Style TargetType="Path">
+                        <Setter Property="Fill">
+                            <Setter.Value>
+                                    <LinearGradientBrush EndPoint="0.167,0.587" StartPoint="0.44,0.32">
+                                        <LinearGradientBrush.RelativeTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                                <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                                <TranslateTransform X="0.198" Y="-0.092"/>
+                                            </TransformGroup>
+                                        </LinearGradientBrush.RelativeTransform>
+                                        <GradientStop Color="#FFFFE4BD" Offset="0.008"/>
+                                        <GradientStop Color="#FFD1FF00" Offset="1"/>
+                                    </LinearGradientBrush>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Fill" Value="Gold"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Path.Style>
+                
+                
+            </Path>
+            <Rectangle HorizontalAlignment="Left" Height="64" Margin="151,123.773,0,0" VerticalAlignment="Top" Width="118">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.167,0.587" StartPoint="0.44,0.32">
+                        <LinearGradientBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform X="0.198" Y="-0.092"/>
+                            </TransformGroup>
+                        </LinearGradientBrush.RelativeTransform>
+                        <GradientStop Color="#FFFFE4BD" Offset="0.008"/>
+                        <GradientStop Color="#FFD1FF00" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Path  Data="M619,192.773 L762,123.773" HorizontalAlignment="Left" Height="69" Margin="619,123.773,0,0" Stretch="Fill" VerticalAlignment="Top" Width="143" Stroke="Black">
+                <Path.Fill>
+                    <LinearGradientBrush EndPoint="0.167,0.587" StartPoint="0.44,0.32">
+                        <LinearGradientBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform X="0.198" Y="-0.092"/>
+                            </TransformGroup>
+                        </LinearGradientBrush.RelativeTransform>
+                        <GradientStop Color="#FFFFE4BD" Offset="0.008"/>
+                        <GradientStop Color="Red" Offset="1"/>
+                    </LinearGradientBrush>
+                </Path.Fill>
+            </Path>
+            <InkCanvas HorizontalAlignment="Left" Height="121.5" Margin="24,219,0,0" VerticalAlignment="Top" Width="226.5"/>
+            <Button Content="Button" HorizontalAlignment="Left" Margin="342,273,0,0" VerticalAlignment="Top" Width="130.5" Height="67.5">
+                <Button.Effect>
+                    <BlurEffect/>
+                </Button.Effect>
+            </Button>
+            <Button Content="Button" HorizontalAlignment="Left" Margin="533,282.333,0,0" Style="{DynamicResource SimpleButton}" VerticalAlignment="Top" Width="75"/>
+            <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="625.333,292.333,0,0" Style="{DynamicResource SimpleCheckBox}" VerticalAlignment="Top" Width="80.42"/>
+            <Slider HorizontalAlignment="Left" Margin="553,313.293,0,0" Style="{DynamicResource SimpleSlider}" VerticalAlignment="Top" Width="135"/>
+            <ProgressBar HorizontalAlignment="Left" Height="10" Margin="529.666,267.333,0,0" Style="{DynamicResource SimpleProgressBar}" VerticalAlignment="Top" Width="100"/>
+
+        </Grid>
+    </Border>
 </Window>
