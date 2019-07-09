@@ -7,6 +7,36 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <TextBox x:Name="textBoxWert" HorizontalAlignment="Left" Height="23" Margin="25,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180">
+            <TextBox.Text>
+                <Binding ElementName="sliderWert" Path="Value" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local:AgeValidationRule Minimum="10" Maximum="18"  ValidatesOnTargetUpdated="True"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+            
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <!-- Unsere eigene Textbox als "Placeholder" -->
+                    <StackPanel Orientation="Vertical">
+                        <AdornedElementPlaceholder/>
+                        <TextBlock Text="{Binding [0].ErrorContent}" Grid.Row="0" Grid.Column="1" Foreground="Red" FontSize="12"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </TextBox>
+        <!-- ="{Binding ElementName=sliderWert,
+            Path=Value,
+            UpdateSourceTrigger=PropertyChanged,
+            ValidatesOnExceptions=True}"-->
+
+       
+        <Slider x:Name="sliderWert" Minimum="0" Maximum="100" HorizontalAlignment="Left" Margin="25,70,0,0" VerticalAlignment="Top" Width="180"/>
+        <local:AgeTextBox Text="{Binding ElementName=sliderWert,
+            Path=Value,
+            UpdateSourceTrigger=PropertyChanged,
+            ValidatesOnExceptions=True,Mode=TwoWay}"  HorizontalAlignment="Left" Height="23" Margin="25,134,0,0" VerticalAlignment="Top" Width="208"/>
+
     </Grid>
 </Window>
