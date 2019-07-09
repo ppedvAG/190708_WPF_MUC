@@ -17,15 +17,14 @@
                     <UniformGrid Columns="3"/>
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
-            
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <local:BookTile Height="100" Width="100"
-                                    Title="{Binding Title,Mode=TwoWay}"
-                                    Author="{Binding Author,Mode=TwoWay}"
-                                    ImageURL="{Binding ImageURL,Mode=TwoWay}"/>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
+
+            <ListBox.Resources> <!-- Wenn es mehrere DataTemplates gibt, dann müssen alle in die .Ressources hinein anstelle von .ItemTemplate-->
+                <ResourceDictionary>
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceDictionary Source="DataTemplateDictionary.xaml"/>
+                    </ResourceDictionary.MergedDictionaries>
+                </ResourceDictionary>
+            </ListBox.Resources>
         </ListBox>
 
     </Grid>
