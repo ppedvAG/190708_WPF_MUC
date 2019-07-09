@@ -7,6 +7,27 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  HorizontalAlignment="Left" Margin="45,22,0,0" VerticalAlignment="Top" Width="170" Height="44">
+            <Label.Style>
+                <Style TargetType="Label">
+                    <Setter Property="Background" Value="OldLace"/>
+                    <Setter Property="Content" Value="Klick mich !"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Salmon"/>
+                            <Setter Property="Content" Value="TU ES !!!"/>
+                        </Trigger>
+                        <DataTrigger Binding="{Binding ElementName=checkBoxRahmen,Path=IsChecked}"
+                                     Value="True">
+                            <Setter Property="BorderBrush" Value="Orchid"/>
+                            <Setter Property="BorderThickness" Value="5"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Label.Style>
+        </Label>
         
+        <CheckBox x:Name="checkBoxRahmen" Content="Zeige den Rahmen an" HorizontalAlignment="Left" Margin="45,86,0,0" VerticalAlignment="Top" Width="170"/>
+
     </Grid>
 </Window>
