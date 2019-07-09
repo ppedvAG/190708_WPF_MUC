@@ -5,9 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WiederholungTag1"
         mc:Ignorable="d"
-        Title="Editor++" Height="450" Width="800"
+        Title="{Binding ElementName=listBoxHistory,Path=SelectedItem,StringFormat='Editor++ : {0}'}" Height="450" Width="800"
         WindowStyle="ToolWindow"
         WindowStartupLocation="CenterScreen" ShowInTaskbar="False" Topmost="True">
+    <Window.Resources>
+        <Style TargetType="ListBoxItem">
+            <Setter Property="FontFamily" Value="Lucida Calligraphy"/>
+            <Setter Property="Foreground" Value="SteelBlue"/>
+            <Setter Property="Background" Value="YellowGreen"/>
+        </Style>
+    </Window.Resources>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Datei">
@@ -19,7 +26,8 @@
             </MenuItem>
             <MenuItem x:Name="menuItemHilfe" Header="Hilfe" Click="MenuItemHilfe_Click"/>
         </Menu>
-        <ListBox x:Name="listBoxHistory" DockPanel.Dock="Left" Width="150"/>
+        <ListBox x:Name="listBoxHistory" DockPanel.Dock="Left" Width="150"
+                 MouseDoubleClick="ListBoxHistory_MouseDoubleClick"/>
         <TextBox x:Name="textBoxDatei" AcceptsReturn="True" AcceptsTab="True"/>
     </DockPanel>
 </Window>
