@@ -5,10 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="416"
+        Loaded="Window_Loaded">
     <Grid>
-        <local:BookTile Height="100" Width="100" HorizontalAlignment="Left" Margin="82,97,0,0" VerticalAlignment="Top" />
-        <local:BookTile Height="100" Width="100" HorizontalAlignment="Left" Margin="241,97,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="listBoxBooks"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <!--WrapPanel/-->
+                    <UniformGrid Columns="3"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <local:BookTile Height="100" Width="100"
+                                    Title="{Binding Title,Mode=TwoWay}"
+                                    Author="{Binding Author,Mode=TwoWay}"
+                                    ImageURL="{Binding ImageURL,Mode=TwoWay}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
     </Grid>
 </Window>

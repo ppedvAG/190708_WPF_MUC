@@ -49,9 +49,9 @@
     </Border.RenderTransform>
     <Viewbox>
         <StackPanel Margin="5">
-            <Image MinHeight="15" MinWidth="15" MaxHeight="15" MaxWidth="15" Source="https://baconmockup.com/50/50/"/>
-            <TextBlock Text="Title" FontSize="8" HorizontalAlignment="Center"/>
-            <TextBlock Text="Author" FontSize="6" HorizontalAlignment="Center"/>
+            <Image MinHeight="15" MinWidth="15" MaxHeight="15" MaxWidth="15" Source="{Binding ImageURL}"/>
+            <TextBlock Text="{Binding Title}" FontSize="8" HorizontalAlignment="Center"/>
+            <TextBlock Text="{Binding Author}" FontSize="6" HorizontalAlignment="Center"/>
         </StackPanel>
     </Viewbox>
 </Border>

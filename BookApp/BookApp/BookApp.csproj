@@ -69,6 +69,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Book.cs" />
     <Compile Include="BookTile.xaml.cs">
       <DependentUpon>BookTile.xaml</DependentUpon>
     </Compile>
