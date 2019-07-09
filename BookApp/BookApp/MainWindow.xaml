@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <local:BookTile Height="100" Width="100" HorizontalAlignment="Left" Margin="82,97,0,0" VerticalAlignment="Top" />
+        <local:BookTile Height="100" Width="100" HorizontalAlignment="Left" Margin="241,97,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>
