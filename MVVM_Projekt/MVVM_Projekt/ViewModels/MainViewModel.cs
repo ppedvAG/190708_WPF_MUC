@@ -33,7 +33,7 @@ namespace MVVM_Projekt.ViewModels
         public ICommand GetPersonenCommand { get; set; }
         private void GetPersonen(object obj)
         {
-            Personen = service.GetPersonen();
+            Personen = service.GetPersonen(1000);
         }
     }
 }

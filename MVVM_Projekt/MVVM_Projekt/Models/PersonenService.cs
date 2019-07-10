@@ -24,5 +24,24 @@ namespace MVVM_Projekt.Models
                 new Person{Vorname="Axel",Nachname="Schweiß",Alter=100,Kontostand=123,Status=Status.Offline ,ImageURL="http://lorempixel.com/100/100/people/10"},
             };
         }
+
+        public List<Person> GetPersonen(int amount)
+        {
+            Random generator = new Random();
+            List<Person> personen = new List<Person>(); // Performance
+
+            for (int i = 0; i < amount; i++)
+            {
+                Person p = new Person();
+                p.Vorname = Guid.NewGuid().ToString();
+                p.Nachname = Guid.NewGuid().ToString();
+                p.Alter = (byte)generator.Next(0, 255);
+                p.Kontostand = generator.Next(0, Int32.MaxValue);
+                p.Status = (Status)generator.Next(0, 4);
+                p.ImageURL = $"http://lorempixel.com/100/100/people/{i}";
+                personen.Add(p);
+            }
+            return personen;
+        }
     }
 }

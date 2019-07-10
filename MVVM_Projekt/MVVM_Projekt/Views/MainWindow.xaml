@@ -15,7 +15,8 @@
             <MenuItem Header="Personen laden" Command="{Binding GetPersonenCommand}"/>
         </Menu>
 
-        <ListBox ItemsSource="{Binding Personen}" HorizontalContentAlignment="Stretch">
+        <ListBox ItemsSource="{Binding Personen}" HorizontalContentAlignment="Stretch"
+                 VirtualizingStackPanel.VirtualizationMode="Recycling">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
