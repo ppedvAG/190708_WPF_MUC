@@ -9,7 +9,7 @@ namespace ppedv.NorthwindAgent.Domain.Interfaces
         void Add(T item);
         void Delete(T item);
         void Update(T item);
-        T FindByID(int id);
+        T FindByID(string id);
         IEnumerable<T> GetAll();
         void SaveChanges();
     }
