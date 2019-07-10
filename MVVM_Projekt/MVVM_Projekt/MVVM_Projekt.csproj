@@ -66,6 +66,7 @@
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\PersonenService.cs" />
     <Compile Include="Models\Status.cs" />
+    <Compile Include="ViewModels\Helpers\BaseViewModel.cs" />
     <Compile Include="ViewModels\Helpers\RelayCommand.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
