@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVVM_Projekt.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,13 @@ namespace MVVM_Projekt
         public MainWindow()
         {
             InitializeComponent();
+            // this.DataContext = new MainViewModel(new PersonenService());
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            AdminWindow aw = new AdminWindow();
+            aw.Show();
         }
     }
 }

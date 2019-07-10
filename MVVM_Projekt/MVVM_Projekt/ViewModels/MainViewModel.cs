@@ -1,4 +1,5 @@
 ﻿using MVVM_Projekt.Models;
+using MVVM_Projekt.Models.Interfaces;
 using MVVM_Projekt.ViewModels.Helpers;
 using System;
 using System.Collections.Generic;
@@ -14,14 +15,12 @@ namespace MVVM_Projekt.ViewModels
 {
     public class MainViewModel : BaseViewModel
     {
-        public MainViewModel()
+        public MainViewModel(IPersonenService service)
         {
-            // Kontrollfreak-Antipattern
-            // Korrekt: DependencyInjection
-            this.service = new PersonenService();
+            this.service = service;
             GetPersonenCommand = new RelayCommand(GetPersonen);
         }
-        private readonly PersonenService service;
+        private readonly IPersonenService service;
 
         private List<Person> personen;
         public List<Person> Personen

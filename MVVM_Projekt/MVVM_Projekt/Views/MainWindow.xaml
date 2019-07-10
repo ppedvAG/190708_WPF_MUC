@@ -6,10 +6,12 @@
         xmlns:local="clr-namespace:MVVM_Projekt"
         xmlns:vm="clr-namespace:MVVM_Projekt.ViewModels"
         mc:Ignorable="d"
-        Title="Totally not Skype :) " Height="400" Width="500">
-    <Window.DataContext>
+        Title="Totally not Skype :) " Height="400" Width="500"
+        DataContext="{Binding Source={StaticResource Locator}, Path=Main}">
+    
+    <!--<Window.DataContext>
         <vm:MainViewModel/>
-    </Window.DataContext>
+    </Window.DataContext>-->
     
     <DockPanel>
         <Menu DockPanel.Dock="Top">
@@ -23,6 +25,7 @@
                     </ItemsPanelTemplate>
                 </ComboBox.ItemsPanel>
             </ComboBox>
+            <MenuItem Header="Admin-Ansicht" Click="MenuItem_Click"/>
         </Menu>
 
         <ListBox ItemsSource="{Binding Personen}" HorizontalContentAlignment="Stretch"
