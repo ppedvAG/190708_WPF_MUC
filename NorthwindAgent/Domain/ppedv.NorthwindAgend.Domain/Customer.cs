@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ppedv.NorthwindAgend.Domain
+namespace ppedv.NorthwindAgent.Domain
 {
     public class Customer
     {
