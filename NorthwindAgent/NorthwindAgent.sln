@@ -11,7 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logic", "Logic", "{53DDC8B1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{077DAAEB-BA79-4CB9-A76A-810E8DC61881}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.NorthwindAgend.Domain", "Domain\ppedv.NorthwindAgend.Domain\ppedv.NorthwindAgend.Domain.csproj", "{4F5C5DF3-6673-4C81-A4AC-20DDB4BE2CAB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.NorthwindAgent.Domain", "Domain\ppedv.NorthwindAgend.Domain\ppedv.NorthwindAgent.Domain.csproj", "{4F5C5DF3-6673-4C81-A4AC-20DDB4BE2CAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.NorthwindAgent.Data.EF", "ppedv.NorthwindAgent.Data.EF\ppedv.NorthwindAgent.Data.EF.csproj", "{89682BBC-ABE8-44D1-9E5C-DAAE5696F56F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,12 +25,17 @@ Global
 		{4F5C5DF3-6673-4C81-A4AC-20DDB4BE2CAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F5C5DF3-6673-4C81-A4AC-20DDB4BE2CAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F5C5DF3-6673-4C81-A4AC-20DDB4BE2CAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89682BBC-ABE8-44D1-9E5C-DAAE5696F56F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89682BBC-ABE8-44D1-9E5C-DAAE5696F56F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89682BBC-ABE8-44D1-9E5C-DAAE5696F56F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89682BBC-ABE8-44D1-9E5C-DAAE5696F56F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4F5C5DF3-6673-4C81-A4AC-20DDB4BE2CAB} = {C2909740-211F-47F4-8BB0-D9C479ADB06D}
+		{89682BBC-ABE8-44D1-9E5C-DAAE5696F56F} = {0E0B65D9-4CFC-4985-ABE3-A8ED06523C55}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {12DC6768-07C3-4CCE-AD15-AC94A50E4244}
