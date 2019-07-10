@@ -8,7 +8,19 @@
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         Title="MainWindow" Height="178.8" Width="312.8">
     <Grid>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="34,34,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="34,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120">
+            <i:Interaction.Behaviors>
+                <local:NumberTextBoxBehavior NumberType="Integer"/>
+            </i:Interaction.Behaviors>
+        </TextBox>
+        <ListBox HorizontalAlignment="Left" 
+                 Height="100" Margin="168,19,0,0" VerticalAlignment="Top" Width="100">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <i:InvokeCommandAction Command="{Binding SelectionChangedCommand}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </ListBox>
 
     </Grid>
 </Window>
