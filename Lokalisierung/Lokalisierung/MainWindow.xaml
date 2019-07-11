@@ -8,7 +8,7 @@
         xmlns:p="clr-namespace:Lokalisierung.Properties"
         
         mc:Ignorable="d"
-        Title="{x:Static p:Resources.ApplicationTitle}" Height="212.8" Width="311.2">
+        Title="{x:Static p:Resources.ApplicationTitle}" Height="243.734" Width="521.334">
     <Grid>
         <Label Content="{x:Static p:Resources.labelFirstNameText}" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" Width="109"/>
         <Label Content="{x:Static p:Resources.labelLastNameText}" HorizontalAlignment="Left" Margin="10,53,0,0" VerticalAlignment="Top" Width="109"/>
@@ -19,5 +19,30 @@
         <TextBox HorizontalAlignment="Left" Height="23" Margin="105,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="105,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 
+
+
+        <GroupBox Header="Combobox-Lokalisierung" Margin="245,10,10,10">
+            <Grid x:Name="gridRoot">
+                <Grid.Resources>
+                    <ResourceDictionary>
+                        <ResourceDictionary.MergedDictionaries>
+                            <ResourceDictionary Source="Language.xaml"/>
+                        </ResourceDictionary.MergedDictionaries>
+                    </ResourceDictionary>
+                </Grid.Resources>
+                <Label Content="{DynamicResource FirstName}" HorizontalAlignment="Left" Margin="0,25,0,0" VerticalAlignment="Top" Width="109"/>
+                <Label Content="{DynamicResource LastName}" HorizontalAlignment="Left" Margin="0,53,0,0" VerticalAlignment="Top" Width="109"/>
+                <Label Content="{DynamicResource Age}" HorizontalAlignment="Left" Margin="0,81,0,0" VerticalAlignment="Top" Width="109"/>
+                <Label Content="{DynamicResource Balance}" HorizontalAlignment="Left" Margin="0,110,0,0" VerticalAlignment="Top" Width="109"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="100,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="100,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="100,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="100,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <ComboBox SelectionChanged="ComboBox_SelectionChanged" SelectedIndex="0" HorizontalAlignment="Left" Margin="25,141,0,0" VerticalAlignment="Top" Width="214">
+                    <ComboBoxItem Content="Deutsch"/>
+                    <ComboBoxItem Content="Ägyptisch"/>
+                </ComboBox>
+            </Grid>
+        </GroupBox>
     </Grid>
 </Window>
