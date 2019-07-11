@@ -11,7 +11,7 @@
             <MenuItem Header="Zweites Fenster" Click="MenuItem_Click"/>
         </Menu>
         <Grid>
-            <Label x:Name="labelMesswert"
+            <Label x:Name="labelWert"
                    Content="--Messwert aus einem anderen Fenster--" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top" Width="272"/>
 
         </Grid>

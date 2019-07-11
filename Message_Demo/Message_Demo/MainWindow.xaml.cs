@@ -27,7 +27,9 @@ namespace Message_Demo
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            
+            // Variante 1):
+            ZweitesFenster f = new ZweitesFenster(labelWert);
+            f.Show();
         }
     }
 }
