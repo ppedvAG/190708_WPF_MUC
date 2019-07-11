@@ -25,11 +25,27 @@ namespace Message_Demo
             InitializeComponent();
         }
 
+        private void LabelAktualisieren(object data)
+        {
+            labelWert.Content = data;
+        }
+
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            // Variante 1):
-            ZweitesFenster f = new ZweitesFenster(labelWert);
+            // Variante 3):
+            ZweitesFenster f = new ZweitesFenster();
             f.Show();
+        }
+
+        private void MenuItemSubscribe_Click(object sender, RoutedEventArgs e)
+        {
+            MessagingService.Subscribe(MessagingService.Messages.SliderValueChanged, LabelAktualisieren);
+
+        }
+
+        private void MenuItemUnsubscribe_Click(object sender, RoutedEventArgs e)
+        {
+            MessagingService.Unsubscribe(MessagingService.Messages.SliderValueChanged, LabelAktualisieren);
         }
     }
 }

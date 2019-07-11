@@ -9,6 +9,8 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Zweites Fenster" Click="MenuItem_Click"/>
+            <MenuItem x:Name="menuItemSubscribe" Header="Subscribe" Click="MenuItemSubscribe_Click"/>
+            <MenuItem x:Name="menuItemUnsubscribe" Header="Unsubscribe" Click="MenuItemUnsubscribe_Click"/>
         </Menu>
         <Grid>
             <Label x:Name="labelWert"

@@ -19,16 +19,14 @@ namespace Message_Demo
     /// </summary>
     public partial class ZweitesFenster : Window
     {
-        public ZweitesFenster(Label labelWert)
+        public ZweitesFenster()
         {
             InitializeComponent();
-            this.labelWert = labelWert;
         }
-        private readonly Label labelWert;
 
         private void SliderWert_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            labelWert.Content = sliderWert.Value;
+            MessagingService.Publish(MessagingService.Messages.SliderValueChanged, sliderWert.Value);
         }
     }
 }
